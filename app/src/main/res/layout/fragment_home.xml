@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorxam">
+    <RelativeLayout
+        android:id="@+id/layoutSearch"
+        android:background="@color/colorbackgound"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/layoutIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imvDropDown"
+                android:src="@drawable/ic_expand_down"
+                android:layout_marginVertical="5dp"
+                android:layout_centerInParent="true"
+                android:layout_toLeftOf="@id/reloadPO"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="80dp"
+                android:layout_height="24dp"/>
+            <ImageView
+                android:id="@+id/reloadPO"
+                android:visibility="invisible"
+                android:src="@drawable/ic_reset"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_width="70dp"
+                android:layout_height="24dp"/>
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/layoutSearchInput"
+            android:layout_below="@id/layoutIcon"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/edtPONo"
+                    android:hint="PO NO"
+                    android:textColor="@color/textcolorwhite"
+                    android:textColorHint="#D8D3D3"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_marginRight="2.5dp"
+                    android:layout_marginLeft="5dp"
+                    android:maxLines="1"
+                    android:background="@drawable/border_editext_search_po"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:id="@+id/edtProduct"
+                    android:hint="Product"
+                    android:textColor="@color/textcolorwhite"
+                    android:textColorHint="#D8D3D3"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:layout_width="0dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="2.5dp"
+                    android:background="@drawable/border_editext_search_po"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginVertical="5dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/edtProductName"
+                    android:hint="Product name"
+                    android:textColor="@color/textcolorwhite"
+                    android:textColorHint="#D8D3D3"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:maxLines="1"
+                    android:layout_marginRight="2.5dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/border_editext_search_po"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:id="@+id/edtModel"
+                    android:hint="Model"
+                    android:textColor="@color/textcolorwhite"
+                    android:textColorHint="#D8D3D3"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:maxLines="1"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="2.5dp"
+                    android:background="@drawable/border_editext_search_po"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <TextView
+                android:text="Reg date:"
+                android:textSize="8pt"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/textcolorwhite"
+                android:textColorHint="@color/textcolorwhite"
+                android:layout_weight="0.2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="2.5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/edtStartDate"
+                    android:hint="Start date"
+                    android:textColor="@color/textcolorwhite"
+                    android:textColorHint="#D8D3D3"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:maxLines="1"
+                    android:layout_marginRight="2.5dp"
+                    android:layout_marginLeft="5dp"
+                    android:focusableInTouchMode="false"
+                    android:background="@drawable/border_editext_search_po"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:id="@+id/edtEndDate"
+                    android:hint="End date"
+                    android:textColor="@color/textcolorwhite"
+                    android:textColorHint="#D8D3D3"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_marginRight="5dp"
+                    android:focusableInTouchMode="false"
+                    android:maxLines="1"
+                    android:layout_marginLeft="2.5dp"
+                    android:background="@drawable/border_editext_search_po"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/btnSearch"
+                android:text="Search"
+                android:textAllCaps="false"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_below="@+id/layoutSearch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_actual_wo" />
+
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+        android:visibility="gone"
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        app:backgroundTint="@color/colorbackgound"
+        app:srcCompat="@drawable/ic_add" />
+
+</RelativeLayout>
